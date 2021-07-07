@@ -1,0 +1,9 @@
+E:\dvhai\MISA.AMIS\MISA.AMIS\MISA.AMIS.ApplicationCore\bin\Debug\netcoreapp3.1\MISA.AMIS.ApplicationCore.deps.json
+E:\dvhai\MISA.AMIS\MISA.AMIS\MISA.AMIS.ApplicationCore\bin\Debug\netcoreapp3.1\MISA.AMIS.ApplicationCore.dll
+E:\dvhai\MISA.AMIS\MISA.AMIS\MISA.AMIS.ApplicationCore\bin\Debug\netcoreapp3.1\MISA.AMIS.ApplicationCore.pdb
+E:\dvhai\MISA.AMIS\MISA.AMIS\MISA.AMIS.ApplicationCore\obj\Debug\netcoreapp3.1\MISA.AMIS.ApplicationCore.csproj.AssemblyReference.cache
+E:\dvhai\MISA.AMIS\MISA.AMIS\MISA.AMIS.ApplicationCore\obj\Debug\netcoreapp3.1\MISA.AMIS.ApplicationCore.AssemblyInfoInputs.cache
+E:\dvhai\MISA.AMIS\MISA.AMIS\MISA.AMIS.ApplicationCore\obj\Debug\netcoreapp3.1\MISA.AMIS.ApplicationCore.AssemblyInfo.cs
+E:\dvhai\MISA.AMIS\MISA.AMIS\MISA.AMIS.ApplicationCore\obj\Debug\netcoreapp3.1\MISA.AMIS.ApplicationCore.csproj.CoreCompileInputs.cache
+E:\dvhai\MISA.AMIS\MISA.AMIS\MISA.AMIS.ApplicationCore\obj\Debug\netcoreapp3.1\MISA.AMIS.ApplicationCore.dll
+E:\dvhai\MISA.AMIS\MISA.AMIS\MISA.AMIS.ApplicationCore\obj\Debug\netcoreapp3.1\MISA.AMIS.ApplicationCore.pdb
