@@ -10,3 +10,15 @@ E:\dvhai\MISA.AMIS\MISA.AMIS\MISA.AMIS.Infarstructure\obj\Debug\netcoreapp3.1\MI
 E:\dvhai\MISA.AMIS\MISA.AMIS\MISA.AMIS.Infarstructure\bin\Debug\netcoreapp3.1\MISA.AMIS.ApplicationCore.dll
 E:\dvhai\MISA.AMIS\MISA.AMIS\MISA.AMIS.Infarstructure\bin\Debug\netcoreapp3.1\MISA.AMIS.ApplicationCore.pdb
 E:\dvhai\MISA.AMIS\MISA.AMIS\MISA.AMIS.Infarstructure\obj\Debug\netcoreapp3.1\MISA.AMIS.Infarstructure.csproj.CopyComplete
+D:\nam3ki2\misa\DE_THI_FRESHER_TCDN_V4\web05b-mf866-dvhai\backend\misa-amis\MISA.AMIS\MISA.AMIS.Infarstructure\bin\Debug\netcoreapp3.1\MISA.AMIS.Infarstructure.deps.json
+D:\nam3ki2\misa\DE_THI_FRESHER_TCDN_V4\web05b-mf866-dvhai\backend\misa-amis\MISA.AMIS\MISA.AMIS.Infarstructure\bin\Debug\netcoreapp3.1\MISA.AMIS.Infarstructure.dll
+D:\nam3ki2\misa\DE_THI_FRESHER_TCDN_V4\web05b-mf866-dvhai\backend\misa-amis\MISA.AMIS\MISA.AMIS.Infarstructure\bin\Debug\netcoreapp3.1\MISA.AMIS.Infarstructure.pdb
+D:\nam3ki2\misa\DE_THI_FRESHER_TCDN_V4\web05b-mf866-dvhai\backend\misa-amis\MISA.AMIS\MISA.AMIS.Infarstructure\bin\Debug\netcoreapp3.1\MISA.AMIS.ApplicationCore.dll
+D:\nam3ki2\misa\DE_THI_FRESHER_TCDN_V4\web05b-mf866-dvhai\backend\misa-amis\MISA.AMIS\MISA.AMIS.Infarstructure\bin\Debug\netcoreapp3.1\MISA.AMIS.ApplicationCore.pdb
+D:\nam3ki2\misa\DE_THI_FRESHER_TCDN_V4\web05b-mf866-dvhai\backend\misa-amis\MISA.AMIS\MISA.AMIS.Infarstructure\obj\Debug\netcoreapp3.1\MISA.AMIS.Infarstructure.csprojAssemblyReference.cache
+D:\nam3ki2\misa\DE_THI_FRESHER_TCDN_V4\web05b-mf866-dvhai\backend\misa-amis\MISA.AMIS\MISA.AMIS.Infarstructure\obj\Debug\netcoreapp3.1\MISA.AMIS.Infarstructure.AssemblyInfoInputs.cache
+D:\nam3ki2\misa\DE_THI_FRESHER_TCDN_V4\web05b-mf866-dvhai\backend\misa-amis\MISA.AMIS\MISA.AMIS.Infarstructure\obj\Debug\netcoreapp3.1\MISA.AMIS.Infarstructure.AssemblyInfo.cs
+D:\nam3ki2\misa\DE_THI_FRESHER_TCDN_V4\web05b-mf866-dvhai\backend\misa-amis\MISA.AMIS\MISA.AMIS.Infarstructure\obj\Debug\netcoreapp3.1\MISA.AMIS.Infarstructure.csproj.CoreCompileInputs.cache
+D:\nam3ki2\misa\DE_THI_FRESHER_TCDN_V4\web05b-mf866-dvhai\backend\misa-amis\MISA.AMIS\MISA.AMIS.Infarstructure\obj\Debug\netcoreapp3.1\MISA.AMIS.Infarstructure.csproj.CopyComplete
+D:\nam3ki2\misa\DE_THI_FRESHER_TCDN_V4\web05b-mf866-dvhai\backend\misa-amis\MISA.AMIS\MISA.AMIS.Infarstructure\obj\Debug\netcoreapp3.1\MISA.AMIS.Infarstructure.dll
+D:\nam3ki2\misa\DE_THI_FRESHER_TCDN_V4\web05b-mf866-dvhai\backend\misa-amis\MISA.AMIS\MISA.AMIS.Infarstructure\obj\Debug\netcoreapp3.1\MISA.AMIS.Infarstructure.pdb

@@ -21,7 +21,6 @@ namespace MISA.AMIS.ApplicationCore
         #region Declare
         IBaseRepository<TEntity> _baseRepository;
         ServiceResult _serviceResult = null;
-        IEnumerable<TEntity> _entityDbList = null;
         #endregion
 
         #region Constructer
@@ -32,7 +31,6 @@ namespace MISA.AMIS.ApplicationCore
             {
                 MISACode = MISACode.Success
             };
-            _entityDbList = new List<TEntity>();
         }
         #endregion
 

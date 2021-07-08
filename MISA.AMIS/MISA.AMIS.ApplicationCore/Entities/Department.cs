@@ -16,6 +16,7 @@ namespace MISA.AMIS.ApplicationCoore.Entities
         /// <summary>
         /// Mã phòng ban
         /// </summary>
+        [Key]
         public Guid DepartmentId { get; set; }
 
         /// <summary>

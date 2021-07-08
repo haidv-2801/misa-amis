@@ -17,26 +17,16 @@ using Microsoft.AspNetCore.Cors;
 namespace MISA.CukCuk.Web.Controllers
 {
     [ApiController]
-    public class EmployeesController : BaseEntityController<Employee>
+    public class DepartmentsController : BaseEntityController<Department>
     {
         #region Declare
-        IEmployeeService _employeeService;
+        IDepartmentService _departmentService;
         #endregion
 
         #region Constructer
-        public EmployeesController(IEmployeeService employeeService) : base(employeeService)
+        public DepartmentsController(IDepartmentService departmentService) : base(departmentService)
         {
-            _employeeService = employeeService;
-        }
-        #endregion
-
-        #region Methods
-        [EnableCors("AllowCROSPolicy")]
-        [Route("NextEmployeeCode")]
-        [HttpGet]
-        public ActionResult GetNextEmployeeCode()
-        {
-            return Ok(_employeeService.GetNewEmployeeCode());
+            _departmentService = departmentService;
         }
         #endregion
     }

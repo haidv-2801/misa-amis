@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using MISA.AMIS.ApplicationCore;
 using MISA.AMIS.ApplicationCore.Interfaces;
+using MISA.AMIS.ApplicationCore.Interfaces.IRepositories;
 using MISA.AMIS.Infrastructure;
 using System;
 using System.Collections.Generic;
@@ -51,6 +52,10 @@ namespace MISA.AMIS.Web
             //employee
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
             services.AddScoped<IEmployeeService, EmployeeService>();
+
+            //departmenmt
+            services.AddScoped<IDepartmentRepository, DepartmentRepository>();
+            services.AddScoped<IDepartmentService, DepartmentService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

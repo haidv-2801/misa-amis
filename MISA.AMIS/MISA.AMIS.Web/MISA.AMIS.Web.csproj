@@ -13,10 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\MISA.AMIS.ApplicationCore\MISA.AMIS.ApplicationCore.csproj" />
     <ProjectReference Include="..\MISA.AMIS.Infarstructure\MISA.AMIS.Infarstructure.csproj" />
   </ItemGroup>
