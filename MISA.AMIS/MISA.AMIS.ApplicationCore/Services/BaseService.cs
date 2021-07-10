@@ -47,10 +47,15 @@ namespace MISA.AMIS.ApplicationCore
             return entity;
         }
 
+        /// <summary>
+        /// Thhêm một thực thể
+        /// </summary>
+        /// <param name="entity">Thực thể cần thêm</param>
+        /// <returns>Các</returns>
         public virtual ServiceResult Insert(TEntity entity)
         {
             entity.EntityState = EntityState.Add;
-
+             
             //1. Validate tất cả các trường nếu được gắn thẻ
             var isValid = Validate(entity);
 

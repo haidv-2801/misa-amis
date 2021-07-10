@@ -100,6 +100,11 @@ namespace MISA.AMIS.ApplicationCore.Interfaces
             return rowAffects;
         }
 
+        /// <summary>
+        /// Ánh xạ các thuộc tính sang kiểu dynamic
+        /// </summary>
+        /// <param name="entity">Thực thể</param>
+        /// <returns>Dan sách các biến động</returns>
         private DynamicParameters MappingDbType(TEntity entity)
         {
             //1. Duyệt các thuộc tính trên entity và tạo parameters
@@ -122,6 +127,7 @@ namespace MISA.AMIS.ApplicationCore.Interfaces
             return parameters;
         }
        
+        //Lấy thuộc tính keyname
         private PropertyInfo GetKeyProperty()
         {
             var keyProperty = typeof(TEntity)
@@ -132,6 +138,13 @@ namespace MISA.AMIS.ApplicationCore.Interfaces
             return keyProperty;
         }
 
+        /// <summary>
+        /// Lấy thưc thể theo thuộc tính
+        /// </summary>
+        /// <param name="entity">Thực thể</param>
+        /// <param name="property">Thuộc tính trong thực thể</param>
+        /// <returns>Thực thể</returns>
+        /// CREATED BY: DVHAI 08/07/2021
         public TEntity GetEntityByProperty(TEntity entity, PropertyInfo property)
         {
             var propertyName = property.Name;
@@ -152,6 +165,14 @@ namespace MISA.AMIS.ApplicationCore.Interfaces
             return entityReturn;
         }
 
+
+        /// <summary>
+        /// Lấy thưc thể theo thuộc tính
+        /// </summary>
+        /// <param name="propertyName">Thuộc tính</param>
+        /// <param name="propertyValue">Giá trị của thuộc tính</param>
+        /// <returns>Thực thể</returns>
+        /// CREATED BY: DVHAI 08/07/2021
         public TEntity GetEntityByProperty(string propertyName, object propertyValue)
         {
             string query = $"SELECT * FROM {_tableName} WHERE {propertyName} = '{propertyValue}'";

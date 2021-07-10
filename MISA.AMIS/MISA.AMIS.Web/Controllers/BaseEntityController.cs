@@ -94,7 +94,6 @@ namespace MISA.AMIS.Web.Controllers
 
             if (serviceResult.MISACode == MISACode.InValid)
                 return BadRequest(serviceResult);
-
             return Ok(serviceResult);
         }
 

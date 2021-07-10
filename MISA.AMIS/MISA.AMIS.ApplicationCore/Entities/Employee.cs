@@ -22,6 +22,7 @@ namespace MISA.AMIS.ApplicationCoore.Entities
         /// Mã nhân viên
         /// </summary>
         [IDuplicate]
+        [IRequired]
         public string EmployeeCode { get; set; }
 
         /// <summary>
@@ -42,6 +43,7 @@ namespace MISA.AMIS.ApplicationCoore.Entities
         /// <summary>
         /// ID phòng ban
         /// </summary>
+        [IRequired]
         public Guid? DepartmentId { get; set; }
 
         /// <summary>
@@ -97,18 +99,15 @@ namespace MISA.AMIS.ApplicationCoore.Entities
         /// <summary>
         /// Số điện thoại
         /// </summary>
-        [IDuplicate]
         public string PhoneNumber { get; set; }
 
         /// <summary>
         /// Số điện thoại
         /// </summary>
-        [IDuplicate]
         public string TelephoneNumber { get; set; }
         /// <summary>
         /// Email
         /// </summary>
-        [IDuplicate]
         public string Email { get; set; }
         #endregion
     }

@@ -23,5 +23,13 @@ namespace MISA.AMIS.ApplicationCore.Interfaces
         /// </summary>
         /// <returns>Mã nhân viên mới</returns>
         string GetNewEmployeeCode();
+
+        /// <summary>
+        /// Lấy nhân viên theo mã
+        /// </summary>
+        /// <param name="employeeCode">Mã của nhân viên</param>
+        /// <returns></returns>
+        /// CREATED BY: DVHAI 09/07/2021
+        public Employee GetEmployeeByCode(string employeeCode);
     }
 }

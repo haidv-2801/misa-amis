@@ -14,21 +14,42 @@ namespace MISA.AMIS.ApplicationCore.Interfaces
         #endregion
 
         #region Constructer
-        public EmployeeService(IEmployeeRepository employeeRepository):base(employeeRepository)
+        public EmployeeService(IEmployeeRepository employeeRepository) : base(employeeRepository)
         {
             _employeeRepository = employeeRepository;
         }
         #endregion
 
         #region Methods
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="limit"></param>
+        /// <param name="offset"></param>
+        /// <returns></returns>
         public IEnumerable<Employee> GetEmployeesPaging(int limit, int offset)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Lấy mã mới nhất của nhân viên cộng với 1
+        /// </summary>
+        /// <returns>Mã nhân viên</returns>
+        ///CREATED BY: HAIDV 09/07/2021
         public string GetNewEmployeeCode()
         {
             return _employeeRepository.GetNewEmployeeCode();
+        }
+
+        /// <summary>
+        /// Lấy nhân viên theo mã
+        /// </summary>
+        /// <returns>Nhân viên</returns>
+        /// CREATED BY: HAIDV 09/07/2021
+        public Employee GetEmployeeByCode(string employeeCode)
+        {
+            return _employeeRepository.GetEmployeeByCode(employeeCode);
         }
         #endregion
     }
