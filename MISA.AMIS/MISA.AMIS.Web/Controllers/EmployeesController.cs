@@ -50,6 +50,7 @@ namespace MISA.CukCuk.Web.Controllers
         /// </summary>
         /// <param name="employeeCode">Mã nhân viên</param>
         /// <returns>Nhân viên</returns>
+        /// CREATED BY: DVHAI 07/10/2021
         [EnableCors("AllowCROSPolicy")]
         [Route("EmployeeByCode/{employeeCode}")]
         [HttpGet]
@@ -72,6 +73,22 @@ namespace MISA.CukCuk.Web.Controllers
                 serviceResult.MISACode = MISACode.Success;
             }
             return Ok(serviceResult);
+        }
+
+        /// <summary>
+        /// Lấy danh sách nhân viên phân trang, tìm kiếm
+        /// </summary>
+        /// <param name="filterValue">Giá trị tìm kiếm</param>
+        /// <param name="limit">Số bản ghi trên 1 trang</param>
+        /// <param name="offset">Số trang</param>
+        /// <returns>Danh sách nhân viên</returns>
+        /// CREATED BY: DVHAI (07/07/2021)
+        [EnableCors("AllowCROSPolicy")]
+        [Route("EmployeesFilterPaging")]
+        [HttpGet]
+        public ActionResult GetEmployeesFilterPaging([FromQuery]string filterValue, [FromQuery] int limit, [FromQuery] int offset)
+        {
+            return Ok(_employeeService.GetEmployeesFilterPaging(filterValue, limit, offset));
         }
         #endregion
     }

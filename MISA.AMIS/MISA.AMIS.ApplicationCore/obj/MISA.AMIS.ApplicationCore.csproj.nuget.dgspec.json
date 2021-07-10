@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\nam3ki2\\misa\\DE_THI_FRESHER_TCDN_V4\\web05b-mf866-dvhai\\backend\\misa-amis\\MISA.AMIS\\MISA.AMIS.ApplicationCore\\MISA.AMIS.ApplicationCore.csproj": {}
+    "E:\\dvhai\\clone-10072021\\misa-amis\\MISA.AMIS\\MISA.AMIS.ApplicationCore\\MISA.AMIS.ApplicationCore.csproj": {}
   },
   "projects": {
-    "D:\\nam3ki2\\misa\\DE_THI_FRESHER_TCDN_V4\\web05b-mf866-dvhai\\backend\\misa-amis\\MISA.AMIS\\MISA.AMIS.ApplicationCore\\MISA.AMIS.ApplicationCore.csproj": {
+    "E:\\dvhai\\clone-10072021\\misa-amis\\MISA.AMIS\\MISA.AMIS.ApplicationCore\\MISA.AMIS.ApplicationCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\nam3ki2\\misa\\DE_THI_FRESHER_TCDN_V4\\web05b-mf866-dvhai\\backend\\misa-amis\\MISA.AMIS\\MISA.AMIS.ApplicationCore\\MISA.AMIS.ApplicationCore.csproj",
+        "projectUniqueName": "E:\\dvhai\\clone-10072021\\misa-amis\\MISA.AMIS\\MISA.AMIS.ApplicationCore\\MISA.AMIS.ApplicationCore.csproj",
         "projectName": "MISA.AMIS.ApplicationCore",
-        "projectPath": "D:\\nam3ki2\\misa\\DE_THI_FRESHER_TCDN_V4\\web05b-mf866-dvhai\\backend\\misa-amis\\MISA.AMIS\\MISA.AMIS.ApplicationCore\\MISA.AMIS.ApplicationCore.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\nam3ki2\\misa\\DE_THI_FRESHER_TCDN_V4\\web05b-mf866-dvhai\\backend\\misa-amis\\MISA.AMIS\\MISA.AMIS.ApplicationCore\\obj\\",
+        "projectPath": "E:\\dvhai\\clone-10072021\\misa-amis\\MISA.AMIS\\MISA.AMIS.ApplicationCore\\MISA.AMIS.ApplicationCore.csproj",
+        "packagesPath": "C:\\Users\\dvhai\\.nuget\\packages\\",
+        "outputPath": "E:\\dvhai\\clone-10072021\\misa-amis\\MISA.AMIS\\MISA.AMIS.ApplicationCore\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\dvhai\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -60,7 +64,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

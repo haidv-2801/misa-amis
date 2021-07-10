@@ -20,7 +20,7 @@ namespace MISA.AMIS.ApplicationCore
     {
         #region Declare
         IBaseRepository<TEntity> _baseRepository;
-        ServiceResult _serviceResult = null;
+        protected ServiceResult _serviceResult = null;
         #endregion
 
         #region Constructer
@@ -55,7 +55,7 @@ namespace MISA.AMIS.ApplicationCore
         public virtual ServiceResult Insert(TEntity entity)
         {
             entity.EntityState = EntityState.Add;
-             
+
             //1. Validate tất cả các trường nếu được gắn thẻ
             var isValid = Validate(entity);
 

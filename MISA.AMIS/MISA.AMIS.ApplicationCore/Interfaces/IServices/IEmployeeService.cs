@@ -8,15 +8,15 @@ namespace MISA.AMIS.ApplicationCore.Interfaces
 {
     public interface IEmployeeService : IBaseService<Employee>
     {
-
         /// <summary>
-        /// Danh sách nhân viên phân trang
+        /// Lấy danh sách nhân viên phân trang, tìm kiếm
         /// </summary>
-        /// <param name="limit"></param>
-        /// <param name="offset"></param>
-        /// <returns></returns>
-        /// CREATED BY: DVHAI (28/06/2021)
-        public IEnumerable<Employee> GetEmployeesPaging(int limit, int offset);
+        /// <param name="filterValue">Giá trị tìm kiếm</param>
+        /// <param name="limit">Số bản ghi trên 1 trang</param>
+        /// <param name="offset">Số trang</param>
+        /// <returns>Danh sách nhân viên</returns>
+        /// CREATED BY: DVHAI (07/07/2021)
+        ServiceResult GetEmployeesFilterPaging(string filterValue, int limit, int offset);
 
         /// <summary>
         /// Lấy mã nhân viên mới
