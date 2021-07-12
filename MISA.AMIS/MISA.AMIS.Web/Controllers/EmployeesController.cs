@@ -56,23 +56,10 @@ namespace MISA.CukCuk.Web.Controllers
         [HttpGet]
         public ActionResult GetEmployeeByCode(string employeeCode)
         {
-            var serviceResult = new ServiceResult();
-
             var employee = _employeeService.
                 GetEmployeeByCode(employeeCode);
 
-            serviceResult.Data = employee;
-            if(employee == null)
-            {
-                serviceResult.Messasge = "Không tìm thấy.";
-                serviceResult.MISACode = MISACode.InValid;
-            }
-            else
-            {
-                serviceResult.Messasge = "";
-                serviceResult.MISACode = MISACode.Success;
-            }
-            return Ok(serviceResult);
+            return Ok(employee);
         }
 
         /// <summary>

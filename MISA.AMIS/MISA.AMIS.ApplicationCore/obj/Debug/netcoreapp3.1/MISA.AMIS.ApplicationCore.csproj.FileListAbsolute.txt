@@ -25,3 +25,5 @@ E:\dvhai\clone-10072021\misa-amis\MISA.AMIS\MISA.AMIS.ApplicationCore\obj\Debug\
 E:\dvhai\clone-10072021\misa-amis\MISA.AMIS\MISA.AMIS.ApplicationCore\obj\Debug\netcoreapp3.1\MISA.AMIS.ApplicationCore.AssemblyInfoInputs.cache
 E:\dvhai\clone-10072021\misa-amis\MISA.AMIS\MISA.AMIS.ApplicationCore\obj\Debug\netcoreapp3.1\MISA.AMIS.ApplicationCore.AssemblyInfo.cs
 E:\dvhai\clone-10072021\misa-amis\MISA.AMIS\MISA.AMIS.ApplicationCore\obj\Debug\netcoreapp3.1\MISA.AMIS.ApplicationCore.csproj.CoreCompileInputs.cache
+D:\nam3ki2\misa\DE_THI_FRESHER_TCDN_V4\web05b-mf866-dvhai\backend\misa-amis\MISA.AMIS\MISA.AMIS.ApplicationCore\obj\Debug\netcoreapp3.1\MISA.AMIS.ApplicationCore.Properties.Resources.resources
+D:\nam3ki2\misa\DE_THI_FRESHER_TCDN_V4\web05b-mf866-dvhai\backend\misa-amis\MISA.AMIS\MISA.AMIS.ApplicationCore\obj\Debug\netcoreapp3.1\MISA.AMIS.ApplicationCore.csproj.GenerateResource.cache

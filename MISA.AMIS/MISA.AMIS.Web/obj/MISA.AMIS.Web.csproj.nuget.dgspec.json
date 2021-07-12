@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\dvhai\\clone-10072021\\misa-amis\\MISA.AMIS\\MISA.AMIS.Web\\MISA.AMIS.Web.csproj": {}
+    "D:\\nam3ki2\\misa\\DE_THI_FRESHER_TCDN_V4\\web05b-mf866-dvhai\\backend\\misa-amis\\MISA.AMIS\\MISA.AMIS.Web\\MISA.AMIS.Web.csproj": {}
   },
   "projects": {
-    "E:\\dvhai\\clone-10072021\\misa-amis\\MISA.AMIS\\MISA.AMIS.ApplicationCore\\MISA.AMIS.ApplicationCore.csproj": {
+    "D:\\nam3ki2\\misa\\DE_THI_FRESHER_TCDN_V4\\web05b-mf866-dvhai\\backend\\misa-amis\\MISA.AMIS\\MISA.AMIS.ApplicationCore\\MISA.AMIS.ApplicationCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\dvhai\\clone-10072021\\misa-amis\\MISA.AMIS\\MISA.AMIS.ApplicationCore\\MISA.AMIS.ApplicationCore.csproj",
+        "projectUniqueName": "D:\\nam3ki2\\misa\\DE_THI_FRESHER_TCDN_V4\\web05b-mf866-dvhai\\backend\\misa-amis\\MISA.AMIS\\MISA.AMIS.ApplicationCore\\MISA.AMIS.ApplicationCore.csproj",
         "projectName": "MISA.AMIS.ApplicationCore",
-        "projectPath": "E:\\dvhai\\clone-10072021\\misa-amis\\MISA.AMIS\\MISA.AMIS.ApplicationCore\\MISA.AMIS.ApplicationCore.csproj",
-        "packagesPath": "C:\\Users\\dvhai\\.nuget\\packages\\",
-        "outputPath": "E:\\dvhai\\clone-10072021\\misa-amis\\MISA.AMIS\\MISA.AMIS.ApplicationCore\\obj\\",
+        "projectPath": "D:\\nam3ki2\\misa\\DE_THI_FRESHER_TCDN_V4\\web05b-mf866-dvhai\\backend\\misa-amis\\MISA.AMIS\\MISA.AMIS.ApplicationCore\\MISA.AMIS.ApplicationCore.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\nam3ki2\\misa\\DE_THI_FRESHER_TCDN_V4\\web05b-mf866-dvhai\\backend\\misa-amis\\MISA.AMIS\\MISA.AMIS.ApplicationCore\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\dvhai\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -44,9 +40,17 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.AspNetCore.Http.Features": {
               "target": "Package",
               "version": "[5.0.7, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
             }
           },
           "imports": [
@@ -64,25 +68,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\dvhai\\clone-10072021\\misa-amis\\MISA.AMIS\\MISA.AMIS.Infarstructure\\MISA.AMIS.Infarstructure.csproj": {
+    "D:\\nam3ki2\\misa\\DE_THI_FRESHER_TCDN_V4\\web05b-mf866-dvhai\\backend\\misa-amis\\MISA.AMIS\\MISA.AMIS.Infarstructure\\MISA.AMIS.Infarstructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\dvhai\\clone-10072021\\misa-amis\\MISA.AMIS\\MISA.AMIS.Infarstructure\\MISA.AMIS.Infarstructure.csproj",
+        "projectUniqueName": "D:\\nam3ki2\\misa\\DE_THI_FRESHER_TCDN_V4\\web05b-mf866-dvhai\\backend\\misa-amis\\MISA.AMIS\\MISA.AMIS.Infarstructure\\MISA.AMIS.Infarstructure.csproj",
         "projectName": "MISA.AMIS.Infarstructure",
-        "projectPath": "E:\\dvhai\\clone-10072021\\misa-amis\\MISA.AMIS\\MISA.AMIS.Infarstructure\\MISA.AMIS.Infarstructure.csproj",
-        "packagesPath": "C:\\Users\\dvhai\\.nuget\\packages\\",
-        "outputPath": "E:\\dvhai\\clone-10072021\\misa-amis\\MISA.AMIS\\MISA.AMIS.Infarstructure\\obj\\",
+        "projectPath": "D:\\nam3ki2\\misa\\DE_THI_FRESHER_TCDN_V4\\web05b-mf866-dvhai\\backend\\misa-amis\\MISA.AMIS\\MISA.AMIS.Infarstructure\\MISA.AMIS.Infarstructure.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\nam3ki2\\misa\\DE_THI_FRESHER_TCDN_V4\\web05b-mf866-dvhai\\backend\\misa-amis\\MISA.AMIS\\MISA.AMIS.Infarstructure\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\dvhai\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -96,8 +96,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "E:\\dvhai\\clone-10072021\\misa-amis\\MISA.AMIS\\MISA.AMIS.ApplicationCore\\MISA.AMIS.ApplicationCore.csproj": {
-                "projectPath": "E:\\dvhai\\clone-10072021\\misa-amis\\MISA.AMIS\\MISA.AMIS.ApplicationCore\\MISA.AMIS.ApplicationCore.csproj"
+              "D:\\nam3ki2\\misa\\DE_THI_FRESHER_TCDN_V4\\web05b-mf866-dvhai\\backend\\misa-amis\\MISA.AMIS\\MISA.AMIS.ApplicationCore\\MISA.AMIS.ApplicationCore.csproj": {
+                "projectPath": "D:\\nam3ki2\\misa\\DE_THI_FRESHER_TCDN_V4\\web05b-mf866-dvhai\\backend\\misa-amis\\MISA.AMIS\\MISA.AMIS.ApplicationCore\\MISA.AMIS.ApplicationCore.csproj"
               }
             }
           }
@@ -140,25 +140,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\dvhai\\clone-10072021\\misa-amis\\MISA.AMIS\\MISA.AMIS.Web\\MISA.AMIS.Web.csproj": {
+    "D:\\nam3ki2\\misa\\DE_THI_FRESHER_TCDN_V4\\web05b-mf866-dvhai\\backend\\misa-amis\\MISA.AMIS\\MISA.AMIS.Web\\MISA.AMIS.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\dvhai\\clone-10072021\\misa-amis\\MISA.AMIS\\MISA.AMIS.Web\\MISA.AMIS.Web.csproj",
+        "projectUniqueName": "D:\\nam3ki2\\misa\\DE_THI_FRESHER_TCDN_V4\\web05b-mf866-dvhai\\backend\\misa-amis\\MISA.AMIS\\MISA.AMIS.Web\\MISA.AMIS.Web.csproj",
         "projectName": "MISA.AMIS.Web",
-        "projectPath": "E:\\dvhai\\clone-10072021\\misa-amis\\MISA.AMIS\\MISA.AMIS.Web\\MISA.AMIS.Web.csproj",
-        "packagesPath": "C:\\Users\\dvhai\\.nuget\\packages\\",
-        "outputPath": "E:\\dvhai\\clone-10072021\\misa-amis\\MISA.AMIS\\MISA.AMIS.Web\\obj\\",
+        "projectPath": "D:\\nam3ki2\\misa\\DE_THI_FRESHER_TCDN_V4\\web05b-mf866-dvhai\\backend\\misa-amis\\MISA.AMIS\\MISA.AMIS.Web\\MISA.AMIS.Web.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\nam3ki2\\misa\\DE_THI_FRESHER_TCDN_V4\\web05b-mf866-dvhai\\backend\\misa-amis\\MISA.AMIS\\MISA.AMIS.Web\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\dvhai\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -172,11 +168,11 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "E:\\dvhai\\clone-10072021\\misa-amis\\MISA.AMIS\\MISA.AMIS.ApplicationCore\\MISA.AMIS.ApplicationCore.csproj": {
-                "projectPath": "E:\\dvhai\\clone-10072021\\misa-amis\\MISA.AMIS\\MISA.AMIS.ApplicationCore\\MISA.AMIS.ApplicationCore.csproj"
+              "D:\\nam3ki2\\misa\\DE_THI_FRESHER_TCDN_V4\\web05b-mf866-dvhai\\backend\\misa-amis\\MISA.AMIS\\MISA.AMIS.ApplicationCore\\MISA.AMIS.ApplicationCore.csproj": {
+                "projectPath": "D:\\nam3ki2\\misa\\DE_THI_FRESHER_TCDN_V4\\web05b-mf866-dvhai\\backend\\misa-amis\\MISA.AMIS\\MISA.AMIS.ApplicationCore\\MISA.AMIS.ApplicationCore.csproj"
               },
-              "E:\\dvhai\\clone-10072021\\misa-amis\\MISA.AMIS\\MISA.AMIS.Infarstructure\\MISA.AMIS.Infarstructure.csproj": {
-                "projectPath": "E:\\dvhai\\clone-10072021\\misa-amis\\MISA.AMIS\\MISA.AMIS.Infarstructure\\MISA.AMIS.Infarstructure.csproj"
+              "D:\\nam3ki2\\misa\\DE_THI_FRESHER_TCDN_V4\\web05b-mf866-dvhai\\backend\\misa-amis\\MISA.AMIS\\MISA.AMIS.Infarstructure\\MISA.AMIS.Infarstructure.csproj": {
+                "projectPath": "D:\\nam3ki2\\misa\\DE_THI_FRESHER_TCDN_V4\\web05b-mf866-dvhai\\backend\\misa-amis\\MISA.AMIS\\MISA.AMIS.Infarstructure\\MISA.AMIS.Infarstructure.csproj"
               }
             }
           }
@@ -214,7 +210,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

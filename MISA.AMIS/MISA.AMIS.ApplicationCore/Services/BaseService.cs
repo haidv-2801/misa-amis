@@ -16,6 +16,11 @@ using System.Threading.Tasks;
 
 namespace MISA.AMIS.ApplicationCore
 {
+    /// <summary>
+    /// Service dùng chung
+    /// </summary>
+    /// <typeparam name="TEntity">Loại thực thể</typeparam>
+    /// CREATED BY: DVHAI (11/07/2021)
     public class BaseService<TEntity> : IBaseService<TEntity> where TEntity : BaseEntity
     {
         #region Declare
@@ -35,12 +40,23 @@ namespace MISA.AMIS.ApplicationCore
         #endregion
 
         #region Methods
+        /// <summary>
+        /// Lấy tất cả bản ghi
+        /// </summary>
+        /// <returns>Danh sách bản ghi</returns>
+        /// CREATED BY: DVHAI 11/07/2021
         public IEnumerable<TEntity> GetEntities()
         {
             var entities = _baseRepository.GetEntities();
             return entities;
         }
 
+        /// <summary>
+        /// Lấy bản ghi theo Id
+        /// </summary>
+        /// <param name="entityId">Id của bản ghi</param>
+        /// <returns>Bản ghi duy nhất</returns>
+        /// CREATED BY: DVHAI (11/07/2021)
         public TEntity GetEntityById(Guid entityId)
         {
             var entity = _baseRepository.GetEntityById(entityId);
@@ -48,10 +64,11 @@ namespace MISA.AMIS.ApplicationCore
         }
 
         /// <summary>
-        /// Thhêm một thực thể
+        /// Thêm một thực thể
         /// </summary>
         /// <param name="entity">Thực thể cần thêm</param>
-        /// <returns>Các</returns>
+        /// <returns>Số bản ghi bị ảnh hưởng</returns>
+        /// CREATED BY: DVHAI (11/07/2021)
         public virtual ServiceResult Insert(TEntity entity)
         {
             entity.EntityState = EntityState.Add;
@@ -59,40 +76,58 @@ namespace MISA.AMIS.ApplicationCore
             //1. Validate tất cả các trường nếu được gắn thẻ
             var isValid = Validate(entity);
 
+            //2. Sử lí lỗi tương ứng
             if (isValid)
             {
                 _serviceResult.Data = _baseRepository.Insert(entity);
                 _serviceResult.MISACode = MISACode.Valid;
-                _serviceResult.Messasge = "Thêm thành công";
+                _serviceResult.Messasge = Properties.Resources.Msg_Success;
             }
             else
             {
                 _serviceResult.MISACode = MISACode.InValid;
-                _serviceResult.Messasge = "Dữ liệu không hợp lệ, vui lòng kiểm tra lại";
+                _serviceResult.Messasge = Properties.Resources.Msg_NotValid;
             }
 
+            //3. Trả về kế quả
             return _serviceResult;
         }
 
+        /// <summary>
+        /// Cập nhập thông tin bản ghi 
+        /// </summary>
+        /// <param name="entityId">Id bản ghi</param>
+        /// <param name="entity">Thông tin bản ghi</param>
+        /// <returns>Số bản ghi bị ảnh hưởng</returns>
+        /// CREATED BY: DVHAI (11/07/2021)
         public ServiceResult Update(Guid entityId, TEntity entity)
         {
+            //1. Trạng thái
             entity.EntityState = EntityState.Update;
 
-            //1. Validate tất cả các trường nếu được gắn thẻ
+            //2. Validate tất cả các trường nếu được gắn thẻ
             var isValid = Validate(entity);
             if (isValid)
             {
                 _serviceResult.Data = _baseRepository.Update(entityId, entity);
-                _serviceResult.Messasge = "Sửa thành công";
+                _serviceResult.MISACode = MISACode.Valid;
+                _serviceResult.Messasge = Properties.Resources.Msg_Success;
             }
             else
             {
                 _serviceResult.MISACode = MISACode.InValid;
-                _serviceResult.Messasge = "Dữ liệu không hợp lệ, vui lòng kiểm tra lại";
+                _serviceResult.Messasge = Properties.Resources.Msg_NotValid;
             }
+            //3. Trả về kế quả
             return _serviceResult;
         }
 
+        /// <summary>
+        /// Xóa bản ghi theo id
+        /// </summary>
+        /// <param name="entityId">Id bản ghi</param>
+        /// <returns>Số bản ghi bị ảnh hưởng</returns>
+        /// CREATED BY: DVHAI (11/07/2021)
         public ServiceResult Delete(Guid entityId)
         {
             _serviceResult.Data = _baseRepository.Delete(entityId);
@@ -111,20 +146,21 @@ namespace MISA.AMIS.ApplicationCore
 
             //1. Đọc các property
             var properties = entity.GetType().GetProperties();
+
             foreach (var property in properties)
             {
                 //1.1 Kiểm tra xem  có attribute cần phải validate không
                 if (isValid && property.IsDefined(typeof(IRequired), false))
                 {
                     //1.1.1 Check bắt buộc nhập
-                    isValid = validateRequired(entity, property);
+                    isValid = ValidateRequired(entity, property);
                 }
+            }
 
-                if (isValid && property.IsDefined(typeof(IDuplicate), false))
-                {
-                    //1.1.2 Check trùng
-                    isValid = validateDuplicate(entity, property);
-                }
+            //2. Validate tùy chỉnh từng màn hình
+            if (isValid)
+            {
+                isValid = ValidateCustom(entity);
             }
 
             return isValid;
@@ -135,7 +171,7 @@ namespace MISA.AMIS.ApplicationCore
         /// </summary>
         /// <param name="entity">Thực thể</param>
         /// CREATED BY: DVHAI (07/07/2021)
-        protected virtual bool validateCustom(TEntity entity)
+        protected virtual bool ValidateCustom(TEntity entity)
         {
             return true;
         }
@@ -147,56 +183,30 @@ namespace MISA.AMIS.ApplicationCore
         /// <param name="propertyInfo">Thuộc tính của thực thể</param>
         /// <returns>(true-đúng false-sai)</returns>
         /// CREATED BY: DVHAI (07/07/2021)
-        private bool validateRequired(TEntity entity, PropertyInfo propertyInfo)
+        private bool ValidateRequired(TEntity entity, PropertyInfo propertyInfo)
         {
             bool isValid = true;
 
+            //1. Tên trường
             var propertyName = propertyInfo.Name;
+
+            //2. Giấ trị
             var propertyValue = propertyInfo.GetValue(entity);
-            var propertyDisplayName = getAttributeDisplayName(propertyName);
 
-            if (propertyValue == null)
+            //3. Tên hiển thị
+            var propertyDisplayName = GetAttributeDisplayName(propertyName);
+
+            if (string.IsNullOrEmpty(propertyValue.ToString()))
             {
                 isValid = false;
 
                 _serviceResult.MISACode = MISACode.InValid;
-                _serviceResult.Messasge = "Có lỗi xảy ra, vui lòng kiểm tra lại.";
-                _serviceResult.Data = new { devMsg = $"{propertyDisplayName} không được trống", userMsg = $"{propertyDisplayName} không được trống" };
+                _serviceResult.Messasge = Properties.Resources.Msg_NotValid;
+                _serviceResult.Data = string.Format(Properties.Resources.Msg_Required, propertyDisplayName);
             }
 
             return isValid;
         }
-
-        /// <summary>
-        /// Validate trùng
-        /// </summary>
-        /// <param name="entity">Thực thể</param>
-        /// <param name="propertyInfo">Thuộc tính của thực thể</param>
-        /// <returns>(true-đúng false-sai)</returns>
-        /// CREATED BY: DVHAI (07/07/2021)
-        private bool validateDuplicate(TEntity entity, PropertyInfo propertyInfo)
-        {
-            bool isValid = true;
-
-            var propertyName = propertyInfo.Name;
-            var propertyDisplayName = getAttributeDisplayName(propertyName);
-
-            //Tùy chỉnh nguồn dữ liệu để validate, trạng thái thêm hoắc sửa
-            var entityDuplicate = _baseRepository.GetEntityByProperty(entity, propertyInfo);
-
-            if (entityDuplicate != null)
-            {
-                isValid = false;
-
-                _serviceResult.MISACode = MISACode.InValid;
-                _serviceResult.Messasge = "Có lỗi xảy ra, vui lòng kiểm tra lại.";
-                _serviceResult.Data = new { devMsg = $"{propertyDisplayName} bị trùng", userMsg = $"{propertyDisplayName} bị trùng" };
-            }
-
-            return isValid;
-        }
-
-
 
         /// <summary>
         /// Lấy tên hiển thị của trường trong entity
@@ -204,7 +214,7 @@ namespace MISA.AMIS.ApplicationCore
         /// <param name="attributeName">Tên thuộc tính</param>
         /// <returns>Tên hiển thị</returns>
         /// CREATED BY: DVHAI (07/07/2021)
-        private String getAttributeDisplayName(string attributeName)
+        protected String GetAttributeDisplayName(string attributeName)
         {
             //Gán mặc định bằng tên thuộc tính
             var res = attributeName;
@@ -214,6 +224,31 @@ namespace MISA.AMIS.ApplicationCore
                                                false).Cast<DisplayAttribute>().Single().Name;
             }
             catch { }
+            return res;
+        }
+
+        /// <summary>
+        /// Trả về dữ liệu với kiểu dữ liệu truyền vào
+        /// </summary>
+        /// <param name="type">Kiểu dữ liệu</param>
+        /// <param name="value">Giá trị kiểu string</param>
+        /// <returns>Kiểu dữ liệu động</returns>
+        protected dynamic convertValue(Type type, string value)
+        {
+            dynamic res = null;
+            
+            if (string.IsNullOrEmpty(value))
+                return res;
+
+            //Lấy ra kiểu dữ liệu chuẩn
+            if (type.Name == "Nullable`1")
+            {
+                type = Nullable.GetUnderlyingType(type);
+                if (type.Name == "DateTime")
+                    value = String.Join("-", value.Split('/').Reverse());
+            }
+            res = Convert.ChangeType(value, type);
+
             return res;
         }
         #endregion

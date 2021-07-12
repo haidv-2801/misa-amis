@@ -1,13 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "caPkf8gIOOmoC/GvctO+gt7Ldu66/ElI0tNPXzJKZeByNSkSX5fIOlNul91JFMV3YPC8eYqAbj48bAR2wg3A6Q==",
+  "dgSpecHash": "Gg5BT8ybvQkCgoXiaPgvEr4posJ/qrvvV2rW8Zg1FW9tuBZWq7cfhBJda4lI1X0YauKovL+D6WcEoGHCAKrO4g==",
   "success": true,
-  "projectFilePath": "E:\\dvhai\\clone-10072021\\misa-amis\\MISA.AMIS\\MISA.AMIS.ApplicationCore\\MISA.AMIS.ApplicationCore.csproj",
+  "projectFilePath": "D:\\nam3ki2\\misa\\DE_THI_FRESHER_TCDN_V4\\web05b-mf866-dvhai\\backend\\misa-amis\\MISA.AMIS\\MISA.AMIS.ApplicationCore\\MISA.AMIS.ApplicationCore.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\dvhai\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.7\\microsoft.aspnetcore.http.features.5.0.7.nupkg.sha512",
-    "C:\\Users\\dvhai\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
-    "C:\\Users\\dvhai\\.nuget\\packages\\system.io.pipelines\\5.0.1\\system.io.pipelines.5.0.1.nupkg.sha512",
-    "C:\\Users\\dvhai\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.7\\microsoft.aspnetcore.http.features.5.0.7.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\system.io.pipelines\\5.0.1\\system.io.pipelines.5.0.1.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512"
   ],
   "logs": []
 }

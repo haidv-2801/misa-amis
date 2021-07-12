@@ -9,6 +9,7 @@ using Microsoft.Extensions.Logging;
 using MISA.AMIS.ApplicationCore;
 using MISA.AMIS.ApplicationCore.Interfaces;
 using MISA.AMIS.ApplicationCore.Interfaces.IRepositories;
+using MISA.AMIS.ApplicationCore.MiddleWare;
 using MISA.AMIS.Infrastructure;
 using System;
 using System.Collections.Generic;
@@ -67,6 +68,8 @@ namespace MISA.AMIS.Web
             }
 
             app.UseHttpsRedirection();
+
+            app.UseMiddleware<ErrorHandlingMiddleWare>();
 
             app.UseRouting();
 

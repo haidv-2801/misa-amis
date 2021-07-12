@@ -109,3 +109,4 @@ E:\dvhai\clone-10072021\misa-amis\MISA.AMIS\MISA.AMIS.Web\obj\Debug\netcoreapp3.
 E:\dvhai\clone-10072021\misa-amis\MISA.AMIS\MISA.AMIS.Web\obj\Debug\netcoreapp3.1\MISA.AMIS.Web.RazorTargetAssemblyInfo.cache
 E:\dvhai\clone-10072021\misa-amis\MISA.AMIS\MISA.AMIS.Web\obj\Debug\netcoreapp3.1\MISA.AMIS.Web.csproj.CopyComplete
 E:\dvhai\clone-10072021\misa-amis\MISA.AMIS\MISA.AMIS.Web\obj\Debug\netcoreapp3.1\MISA.AMIS.Web.genruntimeconfig.cache
+D:\nam3ki2\misa\DE_THI_FRESHER_TCDN_V4\web05b-mf866-dvhai\backend\misa-amis\MISA.AMIS\MISA.AMIS.Web\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll

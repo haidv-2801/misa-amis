@@ -17,16 +17,19 @@ namespace MISA.AMIS.ApplicationCoore.Entities
         /// Mã phòng ban
         /// </summary>
         [Key]
+        [Display(Name ="Mã phòng ban")]
         public Guid DepartmentId { get; set; }
 
         /// <summary>
         /// Tên phòng ban
         /// </summary>
+        [Display(Name = "Tên phòng ban")]
         public string DepartmentName { get; set; }
 
         /// <summary>
         /// Mô tả
         /// </summary>
+        [Display(Name = "Mô tả")]
         public string Description { get; set; }
         #endregion
     }

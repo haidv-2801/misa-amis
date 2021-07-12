@@ -20,6 +20,11 @@ namespace MISA.AMIS.Entities
         /// Thành công  
         /// </summary>
         Success = 900,
+
+        /// <summary>
+        /// Lỗi exception
+        /// </summary>
+        Exception = 500
     }
 
     public enum EntityState

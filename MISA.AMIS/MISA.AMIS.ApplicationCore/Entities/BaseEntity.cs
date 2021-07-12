@@ -23,6 +23,12 @@ namespace MISA.AMIS.ApplicationCore.Entities
 
     }
 
+    [AttributeUsage(AttributeTargets.Property)]
+    public class IEmailFormat : Attribute
+    {
+
+    }
+
     public class BaseEntity
     {
         /// <summary>

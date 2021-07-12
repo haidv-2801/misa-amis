@@ -13,7 +13,7 @@ using MISA.AMIS.ApplicationCore.Entities;
 
 namespace MISA.AMIS.ApplicationCore.Interfaces
 {
-    public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity:BaseEntity
+    public class BaseRepository<TEntity> : IBaseRepository<TEntity>, IDisposable where TEntity : BaseEntity
     {
         #region Declare
         IConfiguration _configuration;
@@ -33,14 +33,26 @@ namespace MISA.AMIS.ApplicationCore.Interfaces
         #endregion
 
         #region Methods
+        /// <summary>
+        /// Lấy tất cả
+        /// </summary>
+        /// <returns></returns>
+        /// CREATED BY: DVHAI (11/07/2021)
         public IEnumerable<TEntity> GetEntities()
         {
             //1. Tạo kết nối và truy vấn                        
             var entities = _dbConnection.Query<TEntity>($"Proc_Get{_tableName}s", commandType: CommandType.StoredProcedure).ToList();
 
             //2. Trả về dữ liệu
-            return entities;                                                                                                    
+            return entities;
         }
+
+        /// <summary>
+        /// Lấy theo id
+        /// </summary>
+        /// <param name="entityId"></param>
+        /// <returns></returns>
+        /// CREATED BY: DVHAI (11/07/2021)
         public TEntity GetEntityById(Guid entityId)
         {
             //1. Lấy tên của khóa chính
@@ -51,51 +63,108 @@ namespace MISA.AMIS.ApplicationCore.Interfaces
 
             //2. Tạo kết nối và truy vấn
             var entity = _dbConnection.Query<TEntity>($"Proc_Get{_tableName}ById", param: dynamicParams, commandType: CommandType.StoredProcedure).FirstOrDefault();
-            
+
             //3. Trả về dữ liệu
             return entity;
         }
 
+        /// <summary>
+        /// Xóa theo mã
+        /// </summary>
+        /// <param name="entityId"></param>
+        /// <returns></returns>
+        /// CREATED BY: DVHAI (11/07/2021)
         public int Delete(Guid entityId)
         {
+            var rowAffects = 0;
+            _dbConnection.Open();
 
-            //1. Lấy tên của khóa chính
-            var keyName = GetKeyProperty().Name;
+            using (var transaction = _dbConnection.BeginTransaction())
+            {
+                try
+                {
+                    //1. Lấy tên của khóa chính
+                    var keyName = GetKeyProperty().Name;
 
-            var dynamicParams = new DynamicParameters();
-            dynamicParams.Add($"@m_{keyName}", entityId);
-            
-            //2. Kết nối tới CSDL:
-            int rowAffects = _dbConnection.Execute($"Proc_Delete{_tableName}ById", param: dynamicParams, commandType: CommandType.StoredProcedure);
+                    var dynamicParams = new DynamicParameters();
+                    dynamicParams.Add($"@m_{keyName}", entityId);
 
-            //2. Trả về số bản ghi bị ảnh hưởng
+                    //2. Kết nối tới CSDL:
+                    rowAffects = _dbConnection.Execute($"Proc_Delete{_tableName}ById", param: dynamicParams, transaction: transaction,commandType: CommandType.StoredProcedure);
+
+                    transaction.Commit();
+                }
+                catch { transaction.Rollback(); }
+            }
+
+            //3. Trả về số bản ghi bị ảnh hưởng
             return rowAffects;
         }
 
+        /// <summary>
+        /// Thêm bản ghi
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        /// CREATED BY: DVHAI (11/07/2021)
         public int Insert(TEntity entity)
         {
-            //1. Duyệt các thuộc tính trên bản ghi và tạo parameters
-            var parameters = MappingDbType(entity);
+            var rowAffects = 0;
+            _dbConnection.Open();
+            using (var transaction = _dbConnection.BeginTransaction())
+            {
+                try
+                {
+                    //1.Duyệt các thuộc tính trên bản ghi và tạo parameters
+                    var parameters = MappingDbType(entity);
 
-            //2. Kết nối tới CSDL:
-            var rowAffects = _dbConnection.Execute($"Proc_Insert{_tableName}", parameters, commandType: CommandType.StoredProcedure);
+                    //2.Thực hiện thêm bản ghi
+                    rowAffects = _dbConnection.Execute($"Proc_Insert{_tableName}", param: parameters, transaction: transaction, commandType: CommandType.StoredProcedure);
 
-            //3. Trả về dữ liệu
+                    transaction.Commit();
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback();
+                }
+            }
+
+            //3.Trả về số bản ghi thêm mới
             return rowAffects;
         }
 
+        /// <summary>
+        /// Cập nhập bản ghi
+        /// </summary>
+        /// <param name="entityId"></param>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        /// CREATED BY: DVHAI (11/07/2021)
         public int Update(Guid entityId, TEntity entity)
         {
-            //1. Duyệt các thuộc tính trên customer và tạo parameters
-            var parameters = MappingDbType(entity);
+            var rowAffects = 0;
+            _dbConnection.Open();
+            using (var transaction = _dbConnection.BeginTransaction())
+            {
+                try
+                {
+                    //1. Duyệt các thuộc tính trên customer và tạo parameters
+                    var parameters = MappingDbType(entity);
 
-            //2. Ánh xạ giá trị id
-            var keyName = GetKeyProperty().Name;
-            entity.GetType().GetProperty(keyName).SetValue(entity, entityId);
+                    //2. Ánh xạ giá trị id
+                    var keyName = GetKeyProperty().Name;
+                    entity.GetType().GetProperty(keyName).SetValue(entity, entityId);
 
-            //3. Kết nối tới CSDL:
-            int rowAffects = _dbConnection.Execute($"Proc_Update{_tableName}", param: parameters, commandType: CommandType.StoredProcedure);
+                    //3. Kết nối tới CSDL:
+                    rowAffects = _dbConnection.Execute($"Proc_Update{_tableName}", param: parameters, transaction: transaction, commandType: CommandType.StoredProcedure);
 
+                    transaction.Commit();
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback();
+                }
+            }
             //4. Trả về dữ liệu
             return rowAffects;
         }
@@ -107,35 +176,48 @@ namespace MISA.AMIS.ApplicationCore.Interfaces
         /// <returns>Dan sách các biến động</returns>
         private DynamicParameters MappingDbType(TEntity entity)
         {
-            //1. Duyệt các thuộc tính trên entity và tạo parameters
-            var properties = entity.GetType().GetProperties();
-
             var parameters = new DynamicParameters();
-            foreach (var property in properties)
+            try
             {
-                var propertyName = property.Name;
-                var propertyValue = property.GetValue(entity);
-                var propertyType = property.PropertyType;
+                //1. Duyệt các thuộc tính trên entity và tạo parameters
+                var properties = entity.GetType().GetProperties();
 
-                if (propertyType == typeof(Guid) || propertyType == typeof(Guid?))
-                    parameters.Add($"@{propertyName}", propertyValue, DbType.String);
-                else
-                    parameters.Add($"@{propertyName}", propertyValue);
+                foreach (var property in properties)
+                {
+                    var propertyName = property.Name;
+                    var propertyValue = property.GetValue(entity);
+                    var propertyType = property.PropertyType;
+
+                    if (propertyType == typeof(Guid) || propertyType == typeof(Guid?))
+                        parameters.Add($"@{propertyName}", propertyValue, DbType.String);
+                    else
+                        parameters.Add($"@{propertyName}", propertyValue);
+                }
             }
-
+            catch { }
             //2. Trả về danh sách các parameter
             return parameters;
         }
-       
-        //Lấy thuộc tính keyname
+
+        /// <summary>
+        /// Lấy thuộc tính giá tị khóa
+        /// </summary>
+        /// <returns></returns>
+        /// CREATED BY: DVHAI (11/07/2021)
         private PropertyInfo GetKeyProperty()
         {
-            var keyProperty = typeof(TEntity)
+            try
+            {
+                var keyProperty = typeof(TEntity)
                 .GetProperties()
                 .Where(p => p.IsDefined(typeof(KeyAttribute), false))
                 .FirstOrDefault();
-            
-            return keyProperty;
+                return keyProperty;
+            }
+            catch
+            {
+                return null;
+            }
         }
 
         /// <summary>
@@ -147,13 +229,17 @@ namespace MISA.AMIS.ApplicationCore.Interfaces
         /// CREATED BY: DVHAI 08/07/2021
         public TEntity GetEntityByProperty(TEntity entity, PropertyInfo property)
         {
+            //1. Thông tin của trường hiện tại
             var propertyName = property.Name;
             var propertyValue = property.GetValue(entity);
+
+            //2. Thông tin khóa
             var keyName = GetKeyProperty().Name;
             var keyValue = GetKeyProperty().GetValue(entity);
 
             string query = string.Empty;
 
+            //3. Kiểm tra kiểu form
             if (entity.EntityState == EntityState.Add)
                 query = $"SELECT * FROM {_tableName} WHERE {propertyName} = '{propertyValue}'";
             else if (entity.EntityState == EntityState.Update)
@@ -178,6 +264,17 @@ namespace MISA.AMIS.ApplicationCore.Interfaces
             string query = $"SELECT * FROM {_tableName} WHERE {propertyName} = '{propertyValue}'";
             var entityReturn = _dbConnection.Query<TEntity>(query, commandType: CommandType.Text).FirstOrDefault();
             return entityReturn;
+        }
+
+        /// <summary>
+        /// Đóng kết nối
+        /// </summary>
+        public void Dispose()
+        {
+            if (_dbConnection.State == ConnectionState.Open)
+            {
+                _dbConnection.Close();
+            }
         }
         #endregion
     }

@@ -1,17 +1,20 @@
 {
   "version": 2,
-  "dgSpecHash": "Vtrq+V1UhqKuHnB09tPE00kBlJzPx1z/J5R3m94Z0Pkw6iBDdmoZKpB/2O07niyDTldSk4uVth5L6pXyuhOVOQ==",
+  "dgSpecHash": "VI6RpEQ9cSCT9wrm7KEcPde6UXKdzehfn7iHFxh5xBs+LlNNwpV8tmbjFNy0L5t7hDPANDhLxEYD/Czbd69lLw==",
   "success": true,
-  "projectFilePath": "E:\\dvhai\\clone-10072021\\misa-amis\\MISA.AMIS\\MISA.AMIS.Infarstructure\\MISA.AMIS.Infarstructure.csproj",
+  "projectFilePath": "D:\\nam3ki2\\misa\\DE_THI_FRESHER_TCDN_V4\\web05b-mf866-dvhai\\backend\\misa-amis\\MISA.AMIS\\MISA.AMIS.Infarstructure\\MISA.AMIS.Infarstructure.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\dvhai\\.nuget\\packages\\dapper\\2.0.90\\dapper.2.0.90.nupkg.sha512",
-    "C:\\Users\\dvhai\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.7\\microsoft.aspnetcore.http.features.5.0.7.nupkg.sha512",
-    "C:\\Users\\dvhai\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
-    "C:\\Users\\dvhai\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
-    "C:\\Users\\dvhai\\.nuget\\packages\\mysqlconnector\\1.4.0-beta.1\\mysqlconnector.1.4.0-beta.1.nupkg.sha512",
-    "C:\\Users\\dvhai\\.nuget\\packages\\system.io.pipelines\\5.0.1\\system.io.pipelines.5.0.1.nupkg.sha512",
-    "C:\\Users\\dvhai\\.nuget\\packages\\system.reflection.emit.lightweight\\4.7.0\\system.reflection.emit.lightweight.4.7.0.nupkg.sha512",
-    "C:\\Users\\dvhai\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
+    "C:\\Users\\Admin\\.nuget\\packages\\dapper\\2.0.90\\dapper.2.0.90.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.7\\microsoft.aspnetcore.http.features.5.0.7.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\mysqlconnector\\1.4.0-beta.1\\mysqlconnector.1.4.0-beta.1.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\system.io.pipelines\\5.0.1\\system.io.pipelines.5.0.1.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\system.reflection.emit.lightweight\\4.7.0\\system.reflection.emit.lightweight.4.7.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512"
   ],
   "logs": []
 }
