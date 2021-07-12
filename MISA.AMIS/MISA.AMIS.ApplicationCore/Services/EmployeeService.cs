@@ -1,14 +1,18 @@
-﻿using MISA.AMIS.ApplicationCoore.Entities;
+﻿using ClosedXML.Excel;
+using MISA.AMIS.ApplicationCoore.Entities;
 using MISA.AMIS.ApplicationCore.Entities;
 using MISA.AMIS.ApplicationCore.Interfaces;
 using MISA.AMIS.Entities;
+using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 
 namespace MISA.AMIS.ApplicationCore.Interfaces
 {
@@ -155,6 +159,13 @@ namespace MISA.AMIS.ApplicationCore.Interfaces
             return isValid;
         }
 
+        /// <summary>
+        /// Validate định dạng email
+        /// </summary>
+        /// <param name="employee"></param>
+        /// <param name="propertyInfo"></param>
+        /// <returns>(true-đúng false-sai)</returns>
+        /// CREATED BY: DVHAI (07/07/2021)
         private bool ValidateEmail(Employee employee, PropertyInfo propertyInfo)
         {
             bool isValid = true;
@@ -183,6 +194,136 @@ namespace MISA.AMIS.ApplicationCore.Interfaces
             }
 
             return isValid;
+        }
+
+        /// <summary>
+        /// Xuất excel
+        /// </summary>
+        /// <param name="cancellationToken"></param>
+        /// <param name="filterValue"></param>
+        /// <returns></returns>
+        /// CREATED BY: DVHAI (07/07/2021)
+        public MemoryStream Export(CancellationToken cancellationToken, string filterValue)
+        {
+            var employees = _employeeRepository.GetEntities();
+            var exportColumns = _employeeRepository.GetExportColumns();
+
+            var stream = new MemoryStream();
+            using (var package = new ExcelPackage(stream))
+            {
+                var workSheet = package.Workbook.Worksheets.Add("Sheet1");
+
+
+
+
+                workSheet.Cells.LoadFromCollection(employees, true);
+                package.Save();
+            }
+            stream.Position = 0;
+            return stream;
+        }
+
+        public string ExportEmployee()
+        {
+            //Lấy ra danh sách nhân viên
+            List<Employee> employees = _employeeRepository.GetAllEmployee();
+            //Lấy ra danh sách cột cần xuất khẩu
+            List<ExportColumn> exportColumns = _employeeRepository.GetExportColumn();
+            using (var workbook = new XLWorkbook())
+            {
+                IXLWorksheet worksheet = workbook.Worksheets.Add("Employees");
+                worksheet.Cell(3, 1).Value = "STT";
+                worksheet.Cell(3, 1).Style.Font.SetBold();
+                worksheet.Cell(3, 1).Style.Fill.SetBackgroundColor(XLColor.LightGray);
+                worksheet.Cell(3, 1).Style.Border.TopBorder = XLBorderStyleValues.Thin;
+                worksheet.Cell(3, 1).Style.Border.TopBorderColor = XLColor.Black;
+                worksheet.Cell(3, 1).Style.Border.LeftBorder = XLBorderStyleValues.Thin;
+                worksheet.Cell(3, 1).Style.Border.LeftBorderColor = XLColor.Black;
+                worksheet.Cell(3, 1).Style.Border.RightBorder = XLBorderStyleValues.Thin;
+                worksheet.Cell(3, 1).Style.Border.RightBorderColor = XLColor.Black;
+                worksheet.Cell(3, 1).Style.Border.BottomBorder = XLBorderStyleValues.Thin;
+                worksheet.Cell(3, 1).Style.Border.BottomBorderColor = XLColor.Black;
+                for (int i = 1; i < exportColumns.Count; i++)
+                {
+                    worksheet.Cell(3, i + 1).Value = exportColumns[i - 1].DisplayName;
+                    worksheet.Cell(3, i + 1).Style.Font.SetBold();
+                    worksheet.Cell(3, i + 1).Style.Fill.SetBackgroundColor(XLColor.LightGray);
+                    worksheet.Cell(3, i + 1).Style.Border.TopBorder = XLBorderStyleValues.Thin;
+                    worksheet.Cell(3, i + 1).Style.Border.TopBorderColor = XLColor.Black;
+                    worksheet.Cell(3, i + 1).Style.Border.LeftBorder = XLBorderStyleValues.Thin;
+                    worksheet.Cell(3, i + 1).Style.Border.LeftBorderColor = XLColor.Black;
+                    worksheet.Cell(3, i + 1).Style.Border.RightBorder = XLBorderStyleValues.Thin;
+                    worksheet.Cell(3, i + 1).Style.Border.RightBorderColor = XLColor.Black;
+                    worksheet.Cell(3, i + 1).Style.Border.BottomBorder = XLBorderStyleValues.Thin;
+                    worksheet.Cell(3, i + 1).Style.Border.BottomBorderColor = XLColor.Black;
+                    worksheet.Column(i + 1).Width = exportColumns[i - 1].Width;
+                }
+                for (int index = 1; index <= employees.Count; index++)
+                {
+                    worksheet.Cell(index + 3, 1).Value = index;
+                    worksheet.Cell(index + 3, 1).Style.Border.TopBorder = XLBorderStyleValues.Thin;
+                    worksheet.Cell(index + 3, 1).Style.Border.TopBorderColor = XLColor.Black;
+                    worksheet.Cell(index + 3, 1).Style.Border.LeftBorder = XLBorderStyleValues.Thin;
+                    worksheet.Cell(index + 3, 1).Style.Border.LeftBorderColor = XLColor.Black;
+                    worksheet.Cell(index + 3, 1).Style.Border.RightBorder = XLBorderStyleValues.Thin;
+                    worksheet.Cell(index + 3, 1).Style.Border.RightBorderColor = XLColor.Black;
+                    worksheet.Cell(index + 3, 1).Style.Border.BottomBorder = XLBorderStyleValues.Thin;
+                    worksheet.Cell(index + 3, 1).Style.Border.BottomBorderColor = XLColor.Black;
+                    for (int i = 1; i < exportColumns.Count; i++)
+                    {
+                        //Xử lý màu
+                        worksheet.Cell(index + 3, i + 1).Style.Border.TopBorder = XLBorderStyleValues.Thin;
+                        worksheet.Cell(index + 3, i + 1).Style.Border.TopBorderColor = XLColor.Black;
+                        worksheet.Cell(index + 3, i + 1).Style.Border.LeftBorder = XLBorderStyleValues.Thin;
+                        worksheet.Cell(index + 3, i + 1).Style.Border.LeftBorderColor = XLColor.Black;
+                        worksheet.Cell(index + 3, i + 1).Style.Border.RightBorder = XLBorderStyleValues.Thin;
+                        worksheet.Cell(index + 3, i + 1).Style.Border.RightBorderColor = XLColor.Black;
+                        worksheet.Cell(index + 3, i + 1).Style.Border.BottomBorder = XLBorderStyleValues.Thin;
+                        worksheet.Cell(index + 3, i + 1).Style.Border.BottomBorderColor = XLColor.Black;
+                        //Xử lý trường hợp là giới tính
+                        if (exportColumns[i - 1].FieldName == "Gender")
+                        {
+                            if (GetValueByProperty(employees[index - 1], exportColumns[i - 1].FieldName) is null)
+                            {
+                                worksheet.Cell(index + 3, i + 1).Value = "";
+                                continue;
+                            }
+                            switch (int.Parse(GetValueByProperty(employees[index - 1], exportColumns[i - 1].FieldName).ToString()))
+                            {
+                                case 0:
+                                    worksheet.Cell(index + 3, i + 1).Value = "Nữ";
+                                    break;
+                                case 1:
+                                    worksheet.Cell(index + 3, i + 1).Value = "Nam";
+                                    break;
+                                case 2:
+                                    worksheet.Cell(index + 3, i + 1).Value = "Khác";
+                                    break;
+                                default:
+                                    worksheet.Cell(index + 3, i + 1).Value = "";
+                                    break;
+                            }
+                            continue;
+                        }
+                        worksheet.Cell(index + 3, i + 1).Value = GetValueByProperty(employees[index - 1], exportColumns[i - 1].FieldName);
+                    }
+                }
+                worksheet.Range("A1:J1").Merge();
+                worksheet.Cell(1, 1).Value = "DANH SÁCH NHÂN VIÊN";
+                worksheet.Cell(1, 1).Style.Font.FontSize = 16;
+                worksheet.Cell(1, 1).Style.Font.SetBold();
+                worksheet.Cell(1, 1).Style.Alignment.Vertical = XLAlignmentVerticalValues.Center;
+                worksheet.Cell(1, 1).Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+                worksheet.Range("A2:J2").Merge();
+                // Xóa file trước khi tạo
+                if (File.Exists(Path.Combine("./Resources/Danh_sach_nhan_vien.xlsx")))
+                {
+                    File.Delete(Path.Combine("./Resources/Danh_sach_nhan_vien.xlsx"));
+                }
+                workbook.SaveAs("./Resources/Danh_sach_nhan_vien.xlsx");
+                string path = Path.Combine("Resources", "Danh_sach_nhan_vien.xlsx");
+                return _configuration.GetConnectionString("HostUpload") + path.Replace("\\", "/");
+            }
         }
         #endregion
     }
