@@ -2,7 +2,9 @@
 using MISA.AMIS.ApplicationCore.Entities;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
+using System.Threading;
 
 namespace MISA.AMIS.ApplicationCore.Interfaces
 {
@@ -31,5 +33,15 @@ namespace MISA.AMIS.ApplicationCore.Interfaces
         /// <returns></returns>
         /// CREATED BY: DVHAI 09/07/2021
         public Employee GetEmployeeByCode(string employeeCode);
+
+
+        /// <summary>
+        /// Xuất excel
+        /// </summary>
+        /// <param name="cancellationToken"></param>
+        /// <param name="filterValue"></param>
+        /// <returns></returns>
+        /// CREATED BY: DVHAI (07/07/2021)
+        public MemoryStream Export(CancellationToken cancellationToken, string filterValue);
     }
 }

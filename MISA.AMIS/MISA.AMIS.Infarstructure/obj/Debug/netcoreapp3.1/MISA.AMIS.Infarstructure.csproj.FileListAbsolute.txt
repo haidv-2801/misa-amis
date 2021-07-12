@@ -34,3 +34,15 @@ E:\dvhai\clone-10072021\misa-amis\MISA.AMIS\MISA.AMIS.Infarstructure\obj\Debug\n
 E:\dvhai\clone-10072021\misa-amis\MISA.AMIS\MISA.AMIS.Infarstructure\obj\Debug\netcoreapp3.1\MISA.AMIS.Infarstructure.AssemblyInfo.cs
 E:\dvhai\clone-10072021\misa-amis\MISA.AMIS\MISA.AMIS.Infarstructure\obj\Debug\netcoreapp3.1\MISA.AMIS.Infarstructure.csproj.CoreCompileInputs.cache
 E:\dvhai\clone-10072021\misa-amis\MISA.AMIS\MISA.AMIS.Infarstructure\obj\Debug\netcoreapp3.1\MISA.AMIS.Infarstructure.csproj.CopyComplete
+E:\dvhai\clone-12072021\misa-amis\MISA.AMIS\MISA.AMIS.Infarstructure\bin\Debug\netcoreapp3.1\MISA.AMIS.Infarstructure.deps.json
+E:\dvhai\clone-12072021\misa-amis\MISA.AMIS\MISA.AMIS.Infarstructure\bin\Debug\netcoreapp3.1\MISA.AMIS.Infarstructure.dll
+E:\dvhai\clone-12072021\misa-amis\MISA.AMIS\MISA.AMIS.Infarstructure\bin\Debug\netcoreapp3.1\MISA.AMIS.Infarstructure.pdb
+E:\dvhai\clone-12072021\misa-amis\MISA.AMIS\MISA.AMIS.Infarstructure\bin\Debug\netcoreapp3.1\MISA.AMIS.ApplicationCore.dll
+E:\dvhai\clone-12072021\misa-amis\MISA.AMIS\MISA.AMIS.Infarstructure\bin\Debug\netcoreapp3.1\MISA.AMIS.ApplicationCore.pdb
+E:\dvhai\clone-12072021\misa-amis\MISA.AMIS\MISA.AMIS.Infarstructure\obj\Debug\netcoreapp3.1\MISA.AMIS.Infarstructure.csproj.AssemblyReference.cache
+E:\dvhai\clone-12072021\misa-amis\MISA.AMIS\MISA.AMIS.Infarstructure\obj\Debug\netcoreapp3.1\MISA.AMIS.Infarstructure.AssemblyInfoInputs.cache
+E:\dvhai\clone-12072021\misa-amis\MISA.AMIS\MISA.AMIS.Infarstructure\obj\Debug\netcoreapp3.1\MISA.AMIS.Infarstructure.AssemblyInfo.cs
+E:\dvhai\clone-12072021\misa-amis\MISA.AMIS\MISA.AMIS.Infarstructure\obj\Debug\netcoreapp3.1\MISA.AMIS.Infarstructure.csproj.CoreCompileInputs.cache
+E:\dvhai\clone-12072021\misa-amis\MISA.AMIS\MISA.AMIS.Infarstructure\obj\Debug\netcoreapp3.1\MISA.AMIS.Infarstructure.csproj.CopyComplete
+E:\dvhai\clone-12072021\misa-amis\MISA.AMIS\MISA.AMIS.Infarstructure\obj\Debug\netcoreapp3.1\MISA.AMIS.Infarstructure.dll
+E:\dvhai\clone-12072021\misa-amis\MISA.AMIS\MISA.AMIS.Infarstructure\obj\Debug\netcoreapp3.1\MISA.AMIS.Infarstructure.pdb

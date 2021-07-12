@@ -44,5 +44,12 @@ namespace MISA.AMIS.ApplicationCore.Interfaces
         /// <returns>Tổng bản ghi</returns>
         /// CREATED BY: DVHAI (07/07/2021)
         int GetTotalEmployeeFilter(string filterValue);
+
+        /// <summary>
+        /// Lấy tất cả cột trong Exportcolumn để map
+        /// </summary>
+        /// <returns>Tổng bản ghi</returns>
+        /// CREATED BY: DVHAI (12/07/2021)
+        IEnumerable<Employee> GetExportColumns();
     }
 }

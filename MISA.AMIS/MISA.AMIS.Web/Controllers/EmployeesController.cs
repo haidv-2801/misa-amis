@@ -14,6 +14,7 @@ using MISA.AMIS.Web.Controllers;
 using MISA.AMIS.ApplicationCoore.Entities;
 using Microsoft.AspNetCore.Cors;
 using MISA.AMIS.Entities;
+using System.Threading;
 
 namespace MISA.CukCuk.Web.Controllers
 {
@@ -76,6 +77,22 @@ namespace MISA.CukCuk.Web.Controllers
         public ActionResult GetEmployeesFilterPaging([FromQuery]string filterValue, [FromQuery] int limit, [FromQuery] int offset)
         {
             return Ok(_employeeService.GetEmployeesFilterPaging(filterValue, limit, offset));
+        }
+
+        /// <summary>
+        /// Xuất excel
+        /// </summary>
+        /// <param name="cancellationToken"></param>
+        /// <param name="filterValue"></param>
+        /// <returns>Danh sách nhân viên</returns>
+        /// CREATED BY: DVHAI (07/07/2021)
+        [EnableCors("AllowCROSPolicy")]
+        [HttpGet("Export")]
+        public IActionResult Export(CancellationToken cancellationToken, [FromQuery] string filterValue)
+        {
+            var stream = _employeeService.Export(cancellationToken, filterValue);
+            string excelName = $"UserList-{DateTime.Now.ToString("yyyyMMddHHmmssfff")}.xlsx";
+            return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", excelName);
         }
         #endregion
     }

@@ -60,6 +60,21 @@ namespace MISA.AMIS.Infrastructure
             return employees;
         }
 
+
+        /// <summary>
+        /// Lấy tất cả cột trong Exportcolumn để map
+        /// </summary>
+        /// <returns>Tổng bản ghi</returns>
+        /// CREATED BY: DVHAI (12/07/2021)
+        public IEnumerable<Employee> GetExportColumns()
+        {
+            //1. Tạo kết nối và truy vấn                        
+            var exportColumns = _dbConnection.Query<Employee>($"Proc_GetExportColumn", commandType: CommandType.StoredProcedure);
+
+            //1. Trả về dữ liệu
+            return exportColumns;
+        }
+
         /// <summary>
         /// Lấy mã nhân viên mới
         /// </summary>
